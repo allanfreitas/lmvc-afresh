@@ -4,6 +4,7 @@
     use Scandio\lmvc\modules\assetpipeline\view\Asset;
     use Scandio\lmvc\modules\security\Security;
     use Scandio\lmvc\modules\htmltag\Html;
+    use Scandio\js\Bridge;
 ?>
 
 <!doctype html>
@@ -18,30 +19,34 @@
     <?= UI::css(Asset::assets(['styles.less'])) ?>
 
     <?= UI::js(Asset::assets(['jquery.js', 'bootstrap.js'])) ?>
+    <?= UI::js(Asset::assets(['scandio.js'])) ?>
 </head>
 <body>
-<div class="container-fluid">
-    <header>
+    <div class="container-fluid">
+        <header>
+            <?php
+                Bridge::set('jsData', array('previously', 'known', 'on', 'the', 'server'));
+            ?>
+        </header>
 
-    </header>
+        <div class="row-fluid">
+            <?php include($app->view) ?>
+        </div>
 
-    <div class="row-fluid">
-        <?php include($app->view) ?>
+        <div class="example">
+            <?=
+                Html::ul(
+                    [
+                        'class' => 'wrap-it'
+                    ], Html::li(null, ['item-1', 'item-2', 'item-3'])
+                );
+            ?>
+        </div>
+
+        <footer>
+
+        </footer>
     </div>
-
-    <div class="example">
-        <?=
-            Html::ul(
-                [
-                    'class' => 'wrap-it'
-                ], Html::li(null, ['item-1', 'item-2', 'item-3'])
-            );
-        ?>
-    </div>
-
-    <footer>
-
-    </footer>
-</div>
+    <?= Bridge::script() ?>
 </body>
 </html>
