@@ -6,6 +6,7 @@
     "neat": "latest",
     "bourbon": "latest",
     "normalize.scss": "latest",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "scandiojs": "latest"
   }
 }
