@@ -6,7 +6,7 @@ if [[ "$1" != "" ]]
    then
       clone_directory=$1
    else
-      clone_directory="lmvc-patat"
+      clone_directory="lmvc-afresh"
 fi
 
 echo "# Installing your project..."
