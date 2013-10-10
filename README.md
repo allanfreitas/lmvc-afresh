@@ -6,6 +6,8 @@ It depends on *composer* and *bower* for fetching its basic set of dependencies.
 
 Just run `sh bootstrap.sh` to run *composer*, *bower* and set *chmods* on all caching directories appropriately. Calling the bootstrap script as in `sh boostrap.sh no-chmod` will omitt setting *chmods* on cache directories.
 
+You could even call `bash -c "$(curl -fsSL http://raw.github.com/scandio/lmvc-afresh/master/scripts/install.sh)"` which does all the cloning and config-file setup for you!
+
 ## Further references
 
 * [LMVC on GitHub](https://raw.github.com/scandio/lmvc)
